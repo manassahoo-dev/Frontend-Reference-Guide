@@ -21,7 +21,7 @@ const config = {
   organizationName: "manas", // Usually your GitHub org/user name.
   projectName: "frontend-reference", // Usually your repo name.
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "log",
   onBrokenMarkdownLinks: "warn",
 
   trailingSlash: false,
@@ -77,6 +77,7 @@ const config = {
           {
             type: "doc",
             docId: "javascript/intro",
+            to: "javascript/intro",
             label: "JavaScript",
           },
           { to: "/blog", label: "Blog", position: "left" },
