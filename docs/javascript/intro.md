@@ -28,17 +28,16 @@ sidebar_position: 1
 - If we have a lot of JavaScript code, we can put it into a separate file.
 - Script files are attached to HTML with the `src` attribute:
 - This attribute specifies the source URL of an external JavaScript file that should be loaded and executed.
+- This URL can be an absolute URL, pointing to a remote server, or a relative URL, pointing to a file within the same domain.
 
 **Relative path**
 
 ```html
-<script src="/path/to/script.js"></script>
-```
+<!-- Absolute URL -->
+<script src="https://example.com/myscript.js"></script>
 
-**Full URL**
-
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
+<!-- Relative URL -->
+<script src="js/myscript.js"></script>
 ```
 
 :::tip
@@ -102,4 +101,32 @@ sidebar_position: 1
 <script src="https://example.com/myscript.js" crossorigin="anonymous"></script>
 ```
 
-These attributes provide control and flexibility when including JavaScript in your HTML documents, allowing you to manage script loading, execution, and security considerations. Depending on your specific use case and requirements, you may choose to use one or more of these attributes in your `<script>` tags.
+:::note
+
+If `src` is set, the script content is ignored.
+A single `<script>` tag can’t have both the `src` attribute and code inside.
+This won’t work:
+
+```html
+<script src="file.js">
+  alert(1); // the content is ignored, because src is set
+</script>
+```
+
+We must choose either an external `<script src="…">` or a regular `<script>` with code.
+The example above can be split into two scripts to work:
+
+```html
+<script src="file.js"></script>
+<script>
+  alert(1);
+</script>
+```
+
+:::
+
+## Summary
+
+- We can use a `<script>` tag to add JavaScript code to a page.
+- The type and language attributes are not required.
+- A script in an external file can be inserted with `<script src="path/to/script.js"></script>`.
