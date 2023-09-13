@@ -9,3 +9,6 @@
 ## Semicolons
 
 ## Comments
+
+One-line comments start with two forward slash characters //.
+Multiline comments start with a forward slash and an asterisk /_ and end with an asterisk and a forward slash _/.
